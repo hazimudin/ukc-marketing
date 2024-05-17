@@ -75,7 +75,7 @@
 
     </div>
 
-    <div class="card m-2 p-2">
+    {{-- <div class="card m-2 p-2">
         <form action="/import-nasabah" method="POST" enctype="multipart/form-data">
 
             @csrf
@@ -87,7 +87,7 @@
 
             <button type="submit" class="btn btn-primary">Import</button>
         </form>
-    </div>
+    </div> --}}
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
