@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Nasabah;
 use Illuminate\Http\Request;
 
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+
 class NasabahController extends Controller
 {
     /**
@@ -79,7 +81,6 @@ class NasabahController extends Controller
     {
         $user = Nasabah::where('id', $id)->first();
 
-
         $data = [
             'title' => 'test',
             'user' => $user,
@@ -120,5 +121,28 @@ class NasabahController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function importNasabah(Request $request)
+    {
+        $file = $request->file('data_nasabah');
+
+        $reader = new Xlsx();
+
+        $spreadsheet = $reader->load($file);
+
+        $worksheet = $spreadsheet->getActiveSheet();
+
+        foreach ($worksheet->getRowIterator() as $row) {
+            $cellIterator = $row->getCellIterator();
+            $cellIterator->setIterateOnlyExistingCells(false);
+            $data = [];
+            foreach ($cellIterator as $cell) {
+                $data[] = $cell->getValue();
+            }
+
+            // (C2) INSERT INTO DATABASE
+            return print_r($data[0]);
+        }
     }
 }

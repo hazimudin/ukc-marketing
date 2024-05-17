@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [NasabahController::class, 'index']);
 Route::post('/', [NasabahController::class, 'store']);
 Route::get('/detail-user/{id}', [NasabahController::class, 'show']);
+Route::post('/import-nasabah', [NasabahController::class, 'importNasabah']);
