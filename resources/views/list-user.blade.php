@@ -41,7 +41,7 @@
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Hari
+                        {{ $hari }}
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="?filter_hari=senin">Senin</a></li>
@@ -49,7 +49,7 @@
                         <li><a class="dropdown-item" href="?filter_hari=rabu">Rabu</a></li>
                         <li><a class="dropdown-item" href="?filter_hari=kamis">Kamis</a></li>
                         <li><a class="dropdown-item" href="?filter_hari=jumat">Jum'at</a></li>
-                        <li><a class="dropdown-item" href="/">Tampilkan Semua</a></li>
+                        <li><a class="dropdown-item" href="?filter_hari=semua">Tampilkan Semua</a></li>
                     </ul>
                 </div>
             </div>

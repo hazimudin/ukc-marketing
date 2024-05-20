@@ -18,14 +18,22 @@ class NasabahController extends Controller
     {
         if ($request->filter_hari) {
             $filter_hari = $request->filter_hari;
-            $users = Nasabah::orderBy('desa', 'ASC')->where('kelompok', $filter_hari)->get();
+
+            if ($filter_hari == 'semua') {
+
+                $users = Nasabah::orderBy('desa', 'ASC')->get();
+            } else {
+                $users = Nasabah::orderBy('desa', 'ASC')->where('kelompok', $filter_hari)->get();
+            }
         } else {
-            $users = Nasabah::orderBy('desa', 'ASC')->get();
+            $filter_hari = 'senin';
+            $users = Nasabah::orderBy('desa', 'ASC')->where('kelompok', $filter_hari)->get();
         }
 
         $data = [
             'title' => 'test',
             'users' => $users,
+            'hari' => $filter_hari,
         ];
 
         return view('list-user', $data);
