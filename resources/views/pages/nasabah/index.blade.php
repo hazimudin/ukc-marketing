@@ -13,14 +13,14 @@
         </div>
 
 
-        <div class="row mt-4">
-            <div class="col-2 m-0">
+        <div class="row m-2 mt-5 pr-3">
+            <div class="col-2 pl-0 m-0">
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="bi bi-person-plus-fill"></i>
                 </button>
             </div>
 
-            <div class="col-3 m-0">
+            <div class="col-3 m-0 p-0">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -35,6 +35,9 @@
                         <li><a class="dropdown-item" href="?filter_hari=semua">Tampilkan Semua</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="col m-0 p-0 pl-2">
+                <input type="text" class="form-control" id="search" placeholder="Cari Nasabah">
             </div>
 
         </div>
