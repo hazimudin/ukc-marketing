@@ -12,7 +12,9 @@
     <!-- Paviccon ico -->
     <link rel="icon" href="{{ asset('assets/icons/mipmap-hdpi/ic_launcher.png') }}" type="image/x-icon" />
     <!-- PWA  -->
+    <meta name="msapplication-TileColor" content="#4CAF50">
     <meta name="theme-color" content="#4CAF50" />
+    <link rel="mask-icon" href="{{ asset('assets/icons/mipmap-xxhdpi/ic_launcher.png') }}" color="#4CAF50">
     <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
@@ -32,7 +34,7 @@
 
         <div class="row mt-4">
             <div class="col-2 m-0">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="bi bi-person-plus-fill"></i>
                 </button>
             </div>
@@ -208,7 +210,7 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
                     </form>
 
 
