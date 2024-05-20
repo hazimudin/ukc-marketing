@@ -55,9 +55,14 @@
     <div id="app">
         @yield('content')
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+
+    {{-- <script src="{{ asset('/sw.js') }}"></script> --}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+
     <script>
         function hideLoading() {
             document.querySelector('.linePreloader').classList.add('d-none');
@@ -71,7 +76,8 @@
         hideLoading();
     </script>
 
-    {{-- <script src="{{ asset('/sw.js') }}"></script> --}}
+
+    <script src="{{ asset('/sw.js') }}"></script>
     <script>
         if ("serviceWorker" in navigator) {
             // Register a service worker hosted at the root of the

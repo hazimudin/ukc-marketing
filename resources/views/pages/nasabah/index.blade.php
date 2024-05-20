@@ -199,37 +199,4 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-
-    <script>
-        // Construct URLSearchParams object instance from current URL querystring.
-        // var queryParams = new URLSearchParams(window.location.search);
-
-        // // Set new or modify existing parameter value. 
-        // queryParams.set("myParam", "myValue");
-
-        // // Replace current querystring with the new one.
-        // history.replaceState(null, null, "?" + queryParams.toString());
-    </script>
-
-    <script src="{{ asset('/sw.js') }}"></script>
-    <script>
-        if ("serviceWorker" in navigator) {
-            // Register a service worker hosted at the root of the
-            // site using the default scope.
-            navigator.serviceWorker.register("/sw.js").then(
-                (registration) => {
-                    console.log("Service worker registration succeeded:", registration);
-                },
-                (error) => {
-                    console.error(`Service worker registration failed: ${error}`);
-                },
-            );
-        } else {
-            console.error("Service workers are not supported.");
-        }
-    </script>
 @endsection

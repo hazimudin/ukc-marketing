@@ -4,7 +4,8 @@
     "start_url": "/",
     "background_color": "#4CAF50",
     "description": "Pengelolaan Nasabah",
-    "display": "fullscreen",
+    "display": "standalone",
+    "orientation": "portrait-primary",
     "theme_color": "#4CAF50",
     "status_bar": "#4CAF50",
     "icons": [
