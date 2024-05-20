@@ -1,18 +1,13 @@
-const preLoad = function () {
-    return caches.open("offline").then(function (cache) {
-        // caching index and important routes
-        return cache.addAll(filesToCache);
-    });
+const preLoad = async function () {
+    const cache = await caches.open("offline");
+    return await cache.addAll(filesToCache);
 };
 
 self.addEventListener("install", function (event) {
     event.waitUntil(preLoad());
 });
 
-const filesToCache = [
-    '/',
-    '/offline.html'
-];
+const filesToCache = ["/", "/offline.html"];
 
 const checkResponse = function (request) {
     return new Promise(function (fulfill, reject) {
@@ -47,10 +42,12 @@ const returnFromCache = function (request) {
 };
 
 self.addEventListener("fetch", function (event) {
-    event.respondWith(checkResponse(event.request).catch(function () {
-        return returnFromCache(event.request);
-    }));
-    if(!event.request.url.startsWith('http')){
+    event.respondWith(
+        checkResponse(event.request).catch(function () {
+            return returnFromCache(event.request);
+        })
+    );
+    if (!event.request.url.startsWith("http")) {
         event.waitUntil(addToCache(event.request));
     }
 });

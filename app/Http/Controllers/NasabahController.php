@@ -36,7 +36,7 @@ class NasabahController extends Controller
             'hari' => $filter_hari,
         ];
 
-        return view('list-user', $data);
+        return view('pages.nasabah.index', $data);
     }
 
     /**
@@ -94,7 +94,7 @@ class NasabahController extends Controller
             'user' => $user,
         ];
 
-        return view('detail-user', $data);
+        return view('pages.nasabah.edit', $data);
     }
 
     /**

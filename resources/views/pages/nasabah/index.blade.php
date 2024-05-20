@@ -1,31 +1,12 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.app', ['class' => ''])
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UKC Marketing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Paviccon ico -->
-    <link rel="icon" href="{{ asset('assets/icons/mipmap-hdpi/ic_launcher.png') }}" type="image/x-icon" />
-    <!-- PWA  -->
-    <meta name="msapplication-TileColor" content="#4CAF50">
-    <meta name="theme-color" content="#4CAF50" />
-    <link rel="mask-icon" href="{{ asset('assets/icons/mipmap-xxhdpi/ic_launcher.png') }}" color="#4CAF50">
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
-
-</head>
-
-<body>
+@section('content')
+    @include('layouts.navbar.nav1', ['title' => 'List Nasabah'])
     <div class="container">
         <!-- Button trigger modal -->
 
-        <!-- No Internet Assets Trigger -->
 
+        <!-- No Internet Assets Trigger -->
         <div class="d-none">
             <img src="assets\img\no-internet-logo.png" alt="No Internet">
             <img src="assets\img\page-not-found-character.gif" alt="No Internet gif">
@@ -251,6 +232,4 @@
             console.error("Service workers are not supported.");
         }
     </script>
-</body>
-
-</html>
+@endsection
