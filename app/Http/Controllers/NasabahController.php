@@ -64,7 +64,7 @@ class NasabahController extends Controller
             'foto_selfy' => $foto_selfy,
             'foto_ktp' => $foto_ktp,
             'foto_rumah' => $foto_rumah,
-            'desa' => $request->resort,
+            'resort' => $request->resort,
             'user_id' => 1,
         ]);
 

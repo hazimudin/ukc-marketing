@@ -1,0 +1,43 @@
+{
+    "name": "UKC Marketing",
+    "short_name": "UKC",
+    "start_url": "/",
+    "background_color": "#4CAF50",
+    "description": "Pengelolaan Nasabah",
+    "display": "fullscreen",
+    "theme_color": "#4CAF50",
+    "status_bar": "#4CAF50",
+    "icons": [
+        {
+            "src": "/assets/icons/mipmap-hdpi/ic_launcher.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/mipmap-mdpi/ic_launcher.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/mipmap-xhdpi/ic_launcher.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/mipmap-xxhdpi/ic_launcher.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/mipmap-xxxhdpi/ic_launcher.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo.PNG",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -8,11 +8,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Paviccon ico -->
+    <link rel="icon" href="{{ asset('assets/icons/mipmap-hdpi/ic_launcher.png') }}" type="image/x-icon" />
+    <!-- PWA  -->
+    <meta name="theme-color" content="#4CAF50" />
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
 </head>
 
 <body>
     <div class="container">
         <!-- Button trigger modal -->
+
+        <!-- No Internet Assets Trigger -->
+
+        <div class="d-none">
+            <img src="assets\img\no-internet-logo.png" alt="No Internet">
+            <img src="assets\img\page-not-found-character.gif" alt="No Internet gif">
+        </div>
+
 
         <div class="row mt-4">
             <div class="col-2 m-0">
@@ -214,6 +230,24 @@
 
         // // Replace current querystring with the new one.
         // history.replaceState(null, null, "?" + queryParams.toString());
+    </script>
+
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            // Register a service worker hosted at the root of the
+            // site using the default scope.
+            navigator.serviceWorker.register("/sw.js").then(
+                (registration) => {
+                    console.log("Service worker registration succeeded:", registration);
+                },
+                (error) => {
+                    console.error(`Service worker registration failed: ${error}`);
+                },
+            );
+        } else {
+            console.error("Service workers are not supported.");
+        }
     </script>
 </body>
 
