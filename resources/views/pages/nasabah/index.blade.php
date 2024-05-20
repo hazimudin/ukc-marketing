@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.navbar.nav1', ['title' => 'List Nasabah'])
-    <div class="container">
+    <div class="container pt-4 bg-body-secondary">
         <!-- Button trigger modal -->
 
 
@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="row m-2 mt-5 pr-3">
+        <div class="row m-2 mt-1 pr-3">
             <div class="col-2 pl-0 m-0">
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="bi bi-person-plus-fill"></i>
@@ -37,42 +37,39 @@
                 </div>
             </div>
             <div class="col m-0 p-0 pl-2">
-                <input type="text" class="form-control" id="search" placeholder="Cari Nasabah">
+                <input type="text" class="form-control bg-body-tertiary" id="search" placeholder="Cari Nasabah">
             </div>
 
         </div>
 
-    </div>
 
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Titipan</th>
-                <!-- <th scope="col">No HP</th> -->
-                <th scope="col">Desa</th>
-                <!-- <th scope="col">Keterangan</th> -->
-                <!-- <th scope="col">Action</th> -->
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach ($users as $user)
+        <table class="table">
+            <thead>
                 <tr>
-                    <th scope="row">{{ $loop->index + 1 }}</th>
-                    <td><a href="/detail-user/{{ $user->id }}">{{ $user->nama }}</a></td>
-                    <td>{{ $user->titipan }}</td>
-                    <!-- <td>{{ $user->no_hp }}</td> -->
-                    <td><a href="{{ $user->koordinat }}" target="_blank">{{ $user->desa }}</a></td>
-                    <!-- <td>{{ $user->keterangan }}</td> -->
-                    <!-- <td><i class="bi bi-trash-fill"></i> <i class="bi bi-pencil-square"></i></td> -->
+                    <th scope="col">Nama</th>
+                    <th scope="col">Titipan</th>
+                    <!-- <th scope="col">No HP</th> -->
+                    <th scope="col">Desa</th>
+                    <th scope="col">Rating</th>
+                    <!-- <th scope="col">Keterangan</th> -->
+                    <!-- <th scope="col">Action</th> -->
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-    </ul>
+            </thead>
+            <tbody>
+
+                @foreach ($users as $user)
+                    <tr>
+                        <td><a href="/detail-user/{{ $user->id }}">{{ $user->nama }}</a></td>
+                        <td>{{ $user->titipan }}</td>
+                        <!-- <td>{{ $user->no_hp }}</td> -->
+                        <td><a href="{{ $user->koordinat }}" target="_blank">{{ $user->desa }}</a></td>
+                        <!-- <td>{{ $user->keterangan }}</td> -->
+                        <!-- <td><i class="bi bi-trash-fill"></i> <i class="bi bi-pencil-square"></i></td> -->
+                        <td>{{ $user->rating }}</th>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 
 
     </div>

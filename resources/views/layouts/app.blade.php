@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body class="bg-body-secondary">
 
 
     <div class="linePreloader d-none"></div>
@@ -52,9 +52,7 @@
         }
         showLoading();
     </script>
-    <div id="app">
-        @yield('content')
-    </div>
+    @yield('content')
 
     {{-- <script src="{{ asset('/sw.js') }}"></script> --}}
 
