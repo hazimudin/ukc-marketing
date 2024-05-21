@@ -59,7 +59,7 @@
 
                 @foreach ($users as $user)
                     <tr>
-                        <td><a href="/detail-user/{{ $user->id }}">{{ $user->nama }}</a></td>
+                        <td><a href="/detail-user/{{ $user->id }}">{{$loop->index + 1}} - {{ $user->nama }}</a></td>
                         <td>{{ $user->titipan }}</td>
                         <!-- <td>{{ $user->no_hp }}</td> -->
                         <td><a href="{{ $user->koordinat }}" target="_blank">{{ $user->desa }}</a></td>
@@ -73,8 +73,8 @@
 
 
     </div>
-
-    {{-- <div class="card m-2 p-2">
+<br>
+    <div class="card m-2 p-2">
         <form action="/import-nasabah" method="POST" enctype="multipart/form-data">
 
             @csrf
@@ -86,7 +86,7 @@
 
             <button type="submit" class="btn btn-primary">Import</button>
         </form>
-    </div> --}}
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -199,4 +199,6 @@
             </div>
         </div>
     </div>
+
+
 @endsection

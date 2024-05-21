@@ -150,7 +150,22 @@ class NasabahController extends Controller
             }
 
             // (C2) INSERT INTO DATABASE
-            return print_r($data[0]);
+            $dataNasabah = [
+                'nama' => $data[0],
+                'no_hp' => $data[1],
+                'titipan'  => $data[2],
+                'desa' => $data[3],
+                'koordinat' => $data[5],
+                'keterangan'  => $data[4],
+                'kelompok' => $data[6],
+                'foto_selfy' => '',
+                'foto_ktp' => '',
+                'foto_rumah' => '',
+                'resort' => $data[7],
+                'user_id' => 1,
+            ];
+
+            Nasabah::create($dataNasabah);
         }
     }
 }
