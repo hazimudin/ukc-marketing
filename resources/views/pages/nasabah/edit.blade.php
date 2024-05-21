@@ -8,7 +8,7 @@
         <p class="mt-2">Foto KTP</p>
         <img src="/storage/{{ $user->foto_ktp }}" class="img-thumbnail" alt="">
         <hr>
-        <p class="mt-2">Foto Selfy</p>
+        <p class="mt-2">Foto Selfy </p>
         <img src="/storage/{{ $user->foto_selfy }}" class="img-thumbnail" alt="">
         <hr>
         <p class="mt-2">Foto Rumah</p>
