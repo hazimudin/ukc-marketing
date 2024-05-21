@@ -3,7 +3,7 @@
 @section('content')
     @include('layouts.navbar.nav1', ['title' => 'List Nasabah'])
     <div class="container">
-        <h1 class="mt-4">{{ $user->nama }}</h1>
+        <h1 class="mt-4">{{ $user->nama }} tesssttt</h1>
         <hr>
         <p class="mt-2">Foto KTP</p>
         <img src="/storage/{{ $user->foto_ktp }}" class="img-thumbnail" alt="">
